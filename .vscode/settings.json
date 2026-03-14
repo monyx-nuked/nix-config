@@ -34,5 +34,5 @@
     "editor.quickSuggestionsDelay": 250,
     "editor.suggest.filterGraceful": true,
     "editor.suggest.showKeywords": true,
-    "editor.suggest.showWords": true,
+    "editor.suggest.showWords": false,
 }

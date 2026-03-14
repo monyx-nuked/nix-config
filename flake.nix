@@ -35,6 +35,14 @@
     ###############
     flake-parts.url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
 
+    ##########
+    # haumea #
+    ##########
+    haumea = {
+      url = "https://flakehub.com/f/nix-community/haumea/*";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #######
     # nur #
     #######
@@ -44,5 +52,15 @@
     };
   };
 
-  outputs = {}: {};
+  outputs = inputs: 
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({...}: {
+      systems = [
+        "x86_64-linux"
+      ];
+
+      imports = [
+
+      ];
+    })
+  ;
 }
