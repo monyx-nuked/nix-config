@@ -1,0 +1,27 @@
+{
+    "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
+    "editor.fontFamily": "\"JetBrainsMono Nerd Font\", Consolas, 'Courier New', monospace",
+    "editor.wordWrap": "on",
+    "git.autofetch": true,
+    "nix.enableLanguageServer": true, // Enable LSP.
+    "nix.serverPath": "nil", // The path to the LSP server executable.
+    "nix.serverSettings": {
+      // check https://github.com/oxalica/nil/blob/main/docs/configuration.md for all options available
+      "nil": {
+        // "diagnostics": {
+        //  "ignored": ["unused_binding", "unused_with"],
+        // },
+        "formatting": {
+          "command": ["alejandra"],
+        },
+      },
+      "nixd": {
+        "formatting": {
+          "command": ["alejandra"],
+        },
+      },
+    },
+    "gitlens.statusBar.pullRequests.enabled": true,
+    "redhat.telemetry.enabled": false,
+    "telemetry.feedback.enabled": false,
+}
