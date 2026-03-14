@@ -24,4 +24,15 @@
     "gitlens.statusBar.pullRequests.enabled": true,
     "redhat.telemetry.enabled": false,
     "telemetry.feedback.enabled": false,
+    // "editor.quickSuggestions": {
+      // "other": "on",
+      // "comments": "off",
+      // "strings": "on"
+    // },
+    // "editor.suggestOnTriggerCharacters": true,
+    // "editor.acceptSuggestionOnEnter": "on",
+    "editor.quickSuggestionsDelay": 250,
+    "editor.suggest.filterGraceful": true,
+    "editor.suggest.showKeywords": true,
+    "editor.suggest.showWords": true,
 }
