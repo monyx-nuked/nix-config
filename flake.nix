@@ -35,13 +35,10 @@
     ###############
     flake-parts.url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
 
-    ##########
-    # haumea #
-    ##########
-    haumea = {
-      url = "https://flakehub.com/f/nix-community/haumea/*";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ###############
+    # import-tree #
+    ###############
+    import-tree.url = "github:vic/import-tree";
 
     #######
     # nur #
@@ -57,9 +54,8 @@
       systems = [
         "x86_64-linux"
       ];
-
       imports = [
-
+        (inputs.import-tree ./parts)
       ];
     })
   ;
