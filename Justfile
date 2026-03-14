@@ -1,3 +1,6 @@
+default:
+    @just --list
+
 # show flake
 show:
     @nix flake show
