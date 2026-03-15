@@ -28,7 +28,6 @@
         nix-index
         nix-melt
         nix-tree
-        nixos-cli
         nh
         deadnix
         # Options seachers
