@@ -14,7 +14,7 @@ up:
 
 # show flake with arguments
 [group('nix')]
-show-arg arg:
+showw arg:
     @nix flake show {{arg}}
 
 # check the flake
@@ -29,5 +29,17 @@ repl:
 
 # repl with arguments
 [group('nix')]
-repl-arg arg:
+repll arg:
     @nix repl {{arg}}
+
+[group('nix')]
+develop:
+    @nix develop .
+
+[group('nix')]
+developp which:
+    @nix develop .#{{which}}
+
+[group('nix')]
+developpp arg:
+    @nix develop {{arg}}
