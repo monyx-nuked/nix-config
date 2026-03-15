@@ -6,8 +6,12 @@
     #   url = "github:nix-community/nix-index-database";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    nixos-cli = {
+      url = "github:nix-community/nixos-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = {nixpkgs, ...} @ inputs:
+  outputs = {nixpkgs, nixos-cli, ...} @ inputs:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -15,6 +19,9 @@
     };
   in {
     devShells.${system}.default = pkgs.mkShellNoCC {
+      inputsFrom = [
+        nixos-cli.devShells.${system}.default
+      ];
       packages = with pkgs; [
         # Tools for Nix and NixOS systems
         alejandra
