@@ -6,6 +6,7 @@
     #   url = "github:nix-community/nix-index-database";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    flake-parts.url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
   };
   outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
