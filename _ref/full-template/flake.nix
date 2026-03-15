@@ -97,8 +97,14 @@
   # Work-in-progress: refer to parent/sibling flakes in the same repository
   # inputs.c-hello.url = "path:../c-hello";
 
-  outputs = all@{ self, c-hello, rust-web-server, nixpkgs, nix-bundle, ... }: {
-
+  outputs = all @ {
+    self,
+    c-hello,
+    rust-web-server,
+    nixpkgs,
+    nix-bundle,
+    ...
+  }: {
     # Utilized by `nix flake check`
     checks.x86_64-linux.test = c-hello.checks.x86_64-linux.test;
 
@@ -127,22 +133,25 @@
     legacyPackages.x86_64-linux.hello = c-hello.defaultPackage.x86_64-linux;
 
     # Default overlay, for use in dependent flakes
-    overlay = final: prev: { };
+    overlay = final: prev: {};
 
     # # Same idea as overlay but a list or attrset of them.
-    overlays = { exampleOverlay = self.overlay; };
+    overlays = {exampleOverlay = self.overlay;};
 
     # Default module, for use in dependent flakes. Deprecated, use nixosModules.default instead.
-    nixosModule = { config, ... }: { options = {}; config = {}; };
+    nixosModule = {config, ...}: {
+      options = {};
+      config = {};
+    };
 
     # Same idea as nixosModule but a list or attrset of them.
-    nixosModules = { exampleModule = self.nixosModule; };
+    nixosModules = {exampleModule = self.nixosModule;};
 
     # Used with `nixos-rebuild --flake .#<hostname>`
     # nixosConfigurations."<hostname>".config.system.build.toplevel must be a derivation
     nixosConfigurations.example = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [{boot.isContainer=true;}] ;
+      modules = [{boot.isContainer = true;}];
     };
 
     # Utilized by `nix develop`
