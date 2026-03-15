@@ -1,0 +1,2 @@
+Welcome to devshell!
+This devshell is created to work on my nix-configuration
