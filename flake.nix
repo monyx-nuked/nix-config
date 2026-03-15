@@ -7,7 +7,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
   };
-  outputs = {nixpkgs, nixos-cli, ...} @ inputs:
+  outputs = {nixpkgs, ...} @ inputs:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs {
