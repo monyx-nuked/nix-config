@@ -17,7 +17,6 @@
       packages = with pkgs; [
         # Tools for Nix and NixOS systems
         alejandra
-        nix-index
         nix-melt
         nix-tree
         nh
