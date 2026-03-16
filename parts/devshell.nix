@@ -12,6 +12,7 @@
         alias devenvsn='devenv shell --tui "nu --no-std-lib --no-config-file"'
         alias devenvs='devenv shell --tui'
         devenv shell --tui # "nu --no-std-lib --no-config-file"
+        exit
       '';
     };
   };
