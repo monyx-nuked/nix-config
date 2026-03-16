@@ -1,5 +1,21 @@
 {
   description = "Flake for My Nix Configurations";
+  nixConfig = {
+    cores = 0;
+    extra-experimental-features = [
+      "nix-command"
+      "flakes"
+      "pipe-operators"
+    ];
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://install.determinate.systems"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
+    ];
+  };
   inputs = {
     # structure: flake-parts
     flake-parts = {
