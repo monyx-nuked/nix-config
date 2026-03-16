@@ -7,11 +7,12 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     flake-parts.url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
+    import-tree.url = "github:vic/import-tree";
   };
   outputs = {flake-parts, ...} @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} ({...}: {
       imports = [
-        ./parts/devshell.nix
+        (inputs.import-tree ./parts)
       ];
       systems = [
         "x86_64-linux"
