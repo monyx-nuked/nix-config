@@ -6,6 +6,7 @@
       packages = with pkgs; [
         # Tools for Nix and NixOS systems
         alejandra
+        nil
         nix-melt
         nix-tree
         nh
@@ -15,6 +16,8 @@
         optnix
         devenv
         nushell
+        # Utilites
+        just
       ];
 
       shellHook = ''
