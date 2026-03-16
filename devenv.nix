@@ -52,7 +52,7 @@
     echo "Git version:"
     git --version
     alias cat='bat'
-    alias ls='eza'
+    alias ls='eza --icons'
   '';
 
   # https://devenv.sh/tasks/
