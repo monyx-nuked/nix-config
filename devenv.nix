@@ -44,6 +44,8 @@
   # scripts.hello.exec = ''
   #   echo hello from $GREET
   # '';
+  scripts.cat.exec = ''bat'';
+  scripts.ls.exec = ''eza'';
 
   # https://devenv.sh/basics/
   enterShell = ''
