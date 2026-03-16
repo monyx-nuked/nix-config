@@ -11,7 +11,6 @@
   # https://devenv.sh/packages/
   packages = with pkgs; [
     git
-    nushell
   ];
 
   # https://devenv.sh/languages/
@@ -34,7 +33,6 @@
     echo "This devshell is created to work on my nix-configuration"
     echo "Git version:"
     git --version
-    exec nu
   '';
 
   # https://devenv.sh/tasks/
