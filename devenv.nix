@@ -25,6 +25,7 @@
     nushell
     # Utilites
     just
+    gh
   ];
 
   # https://devenv.sh/languages/
