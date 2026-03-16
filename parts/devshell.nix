@@ -4,14 +4,16 @@
       name = "nix-devshell";
 
       packages = with pkgs; [
-        # Nix tooling
-        nil # Nix language server
-        hello
-
-        # utilities
-        git
-        curl
-        jq
+        # Tools for Nix and NixOS systems
+        alejandra
+        nix-melt
+        nix-tree
+        nh
+        deadnix
+        # Options searchers
+        manix
+        optnix
+        devenv
       ];
 
       shellHook = ''
