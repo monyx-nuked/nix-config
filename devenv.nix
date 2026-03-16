@@ -27,6 +27,8 @@
     just
     gh
     lazygit
+    bat
+    eza
   ];
 
   # https://devenv.sh/languages/
