@@ -1,11 +1,18 @@
-{ pkgs, lib, config, inputs, ... }:
-
 {
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}: {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
+  packages = with pkgs; [
+    git
+    nushell
+  ];
 
   # https://devenv.sh/languages/
   # languages.rust.enable = true;
@@ -17,14 +24,17 @@
   # services.postgres.enable = true;
 
   # https://devenv.sh/scripts/
-  scripts.hello.exec = ''
-    echo hello from $GREET
-  '';
+  # scripts.hello.exec = ''
+  #   echo hello from $GREET
+  # '';
 
   # https://devenv.sh/basics/
   enterShell = ''
-    hello         # Run scripts directly
-    git --version # Use packages
+    echo "Welcome to devenv!"
+    echo "This devshell is created to work on my nix-configuration"
+    echo "Git version:"
+    git --version
+    exec nu
   '';
 
   # https://devenv.sh/tasks/
@@ -34,10 +44,10 @@
   # };
 
   # https://devenv.sh/tests/
-  enterTest = ''
-    echo "Running tests"
-    git --version | grep --color=auto "${pkgs.git.version}"
-  '';
+  # enterTest = ''
+  #   echo "Running tests"
+  #   git --version | grep --color=auto "${pkgs.git.version}"
+  # '';
 
   # https://devenv.sh/git-hooks/
   # git-hooks.hooks.shellcheck.enable = true;
