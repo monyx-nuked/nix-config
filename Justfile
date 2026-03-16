@@ -1,4 +1,5 @@
 # List all the just commands
+[group('default')]
 default:
     @just --list
 
@@ -32,14 +33,17 @@ repl:
 repll arg:
     @nix repl {{arg}}
 
+# dev-shell on current-dir
 [group('nix')]
 develop:
     @nix develop .
 
+# dev-shell on current-dir (chose the reference)
 [group('nix')]
 developp which:
     @nix develop .#{{which}}
 
+# dev-shelll with your own arguments
 [group('nix')]
 developpp arg:
     @nix develop {{arg}}
