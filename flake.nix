@@ -2,11 +2,15 @@
   description = "Flake for My Nix Configurations";
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.1";
+    nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
     # nix-index-database = {
     #   url = "github:nix-community/nix-index-database";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    flake-parts.url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
+    flake-parts = {
+      url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+    };
     import-tree.url = "github:vic/import-tree";
   };
   outputs = {flake-parts, ...} @ inputs:
