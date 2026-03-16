@@ -38,7 +38,7 @@ repll arg:
 develop:
     @nix develop .
 
-# dev-shell on current-dir (chose the reference)
+# dev-shell on current-dir (choose the reference)
 [group('nix')]
 developp which:
     @nix develop .#{{which}}
