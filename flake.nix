@@ -6,29 +6,17 @@
     #   url = "github:nix-community/nix-index-database";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    flake-parts.url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
+    import-tree.url = "github:vic/import-tree";
   };
-  outputs = {nixpkgs, ...} @ inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-  in {
-    devShells.${system}.default = pkgs.mkShellNoCC {
-      packages = with pkgs; [
-        # Tools for Nix and NixOS systems
-        alejandra
-        nix-melt
-        nix-tree
-        nh
-        deadnix
-        # Options seachers
-        manix
-        optnix
-        devenv
+  outputs = {flake-parts, ...} @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} ({...}: {
+      imports = [
+        (inputs.import-tree ./parts)
       ];
-      shellHook = ''
-        cat ./res/devshell.txt
-      '';
-    };
-  };
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+    });
 }
