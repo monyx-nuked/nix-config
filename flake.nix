@@ -3,7 +3,7 @@
   nixConfig = {
     cores = 0;
     extra-trusted-users = [
-      "monyx"
+      "monyx" # ADD TRUSTED USERS IN YOUR OWN CONFIG
     ];
     extra-experimental-features = [
       "nix-command"
