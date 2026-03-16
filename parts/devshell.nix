@@ -11,6 +11,7 @@
         nix-tree
         nh
         deadnix
+        statix
         # Options searchers
         manix
         optnix
