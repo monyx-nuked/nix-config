@@ -2,6 +2,9 @@
   description = "Flake for My Nix Configurations";
   nixConfig = {
     cores = 0;
+    extra-trusted-users = [
+      "monyx"
+    ];
     extra-experimental-features = [
       "nix-command"
       "flakes"
