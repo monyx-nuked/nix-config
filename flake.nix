@@ -11,12 +11,12 @@
   };
   outputs = {flake-parts, ...} @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} ({...}: {
-      imports = [
-        (inputs.import-tree ./parts)
-      ];
       systems = [
         "x86_64-linux"
         "aarch64-linux"
+      ];
+      imports = [
+        (inputs.import-tree ./parts)
       ];
     });
 }
