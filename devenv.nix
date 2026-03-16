@@ -26,6 +26,7 @@
     # Utilites
     just
     gh
+    lazygit
   ];
 
   # https://devenv.sh/languages/
