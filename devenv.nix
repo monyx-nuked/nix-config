@@ -44,8 +44,6 @@
   # scripts.hello.exec = ''
   #   echo hello from $GREET
   # '';
-  scripts.cat.exec = ''bat'';
-  scripts.ls.exec = ''eza'';
 
   # https://devenv.sh/basics/
   enterShell = ''
@@ -53,6 +51,8 @@
     echo "This devshell is created to work on my nix-configuration"
     echo "Git version:"
     git --version
+    alias cat='bat'
+    alias ls='eza'
   '';
 
   # https://devenv.sh/tasks/
