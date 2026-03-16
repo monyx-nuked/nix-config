@@ -16,7 +16,7 @@
         manix
         optnix
         devenv
-        # nushell
+        nushell
         # Utilites
         just
       ];
