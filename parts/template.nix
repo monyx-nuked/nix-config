@@ -1,6 +1,6 @@
 {
   flake.defaultTemplate = {
-    path = ./.;
+    path = ../.;
     description = "THIS IS NOT A TEMPLATE BUT TO COPY";
   };
 }
