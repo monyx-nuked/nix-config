@@ -15,14 +15,14 @@
         manix
         optnix
         devenv
-        nushell
+        # nushell
         # Utilites
         just
       ];
 
       shellHook = ''
         cat ./res/devshell.txt
-        exec nu --no-std-lib --no-config-file
+        devenv shell
       '';
     };
   };
