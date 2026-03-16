@@ -23,6 +23,7 @@
 
       shellHook = ''
         cat ./res/devshell.txt
+        alias devenv='devenv shell'
         devenv shell
       '';
     };
