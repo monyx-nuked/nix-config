@@ -9,9 +9,9 @@
 
       shellHook = ''
         cat ./res/devshell.txt
-        alias devenvs='devenv shell --tui "nu --no-std-lib --no-config-file"'
-        alias devenv='devenv shell --tui'
-        devenvs
+        alias devenvsn='devenv shell --tui "nu --no-std-lib --no-config-file"'
+        alias devenvs='devenv shell --tui'
+        devenv shell --tui "nu --no-std-lib --no-config-file"
       '';
     };
   };
