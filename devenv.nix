@@ -10,7 +10,21 @@
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
-    git
+    # Tools for Nix and NixOS systems
+    alejandra
+    nil
+    nix-melt
+    nix-tree
+    nh
+    deadnix
+    statix
+    # Options searchers
+    manix
+    optnix
+    devenv
+    nushell
+    # Utilites
+    just
   ];
 
   # https://devenv.sh/languages/
