@@ -1,16 +1,21 @@
 {
   description = "Flake for My Nix Configurations";
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.1";
-    nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
-    # nix-index-database = {
-    #   url = "github:nix-community/nix-index-database";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    # structure: flake-parts
     flake-parts = {
       url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
-      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    # nix's better altarnative
+    determinate.url = "https://flakehub.com/f/determinatesystems/determinate/*";
+    # nixpkgs or repos
+    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.1";
+    nur = {
+      url = "github:nix-community/nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+    # modules importer: import-tree
     import-tree.url = "github:vic/import-tree";
   };
   outputs = {flake-parts, ...} @ inputs:
