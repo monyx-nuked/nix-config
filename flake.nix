@@ -8,28 +8,13 @@
     # };
     flake-parts.url = "https://flakehub.com/f/hercules-ci/flake-parts/*";
   };
-  outputs = {nixpkgs, ...} @ inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-  in {
-    devShells.${system}.default = pkgs.mkShellNoCC {
-      packages = with pkgs; [
-        # Tools for Nix and NixOS systems
-        alejandra
-        nix-melt
-        nix-tree
-        nh
-        deadnix
-        # Options seachers
-        manix
-        optnix
-        devenv
+  outputs = {flake-parts, ...} @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} ({...}: {
+      imports = [
+        ./parts/devshell.nix
       ];
-      shellHook = ''
-        cat ./res/devshell.txt
-      '';
-    };
-  };
+      systems = [
+        "x86_64-linux"
+      ];
+    });
 }
