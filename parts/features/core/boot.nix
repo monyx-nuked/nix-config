@@ -6,7 +6,7 @@
         memtest86.enable = true;
       };
       loader.efi.canTouchEfiVariables = true;
-      consoleLogLevel = 0;
+      consoleLogLevel = 7;
       initrd.systemd.enable = true;
     };
   };
