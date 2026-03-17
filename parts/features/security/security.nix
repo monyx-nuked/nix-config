@@ -10,9 +10,9 @@
       enableSSHSupport = true;
     };
     # programs.seahorse.enable = true; # ^^
+    security.sudo.extraConfig = ''
+      Defaults:root,%wheel timestamp_timeout=30
+    '';
+    users.users.monyx.extraGroups = ["wheel"];
   };
-  security.sudo.extraConfig = ''
-    Defaults:root,%wheel timestamp_timeout=30
-  '';
-  users.users.monyx.extraGroups = ["wheel"];
 }
