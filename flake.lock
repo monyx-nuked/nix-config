@@ -139,6 +139,25 @@
         "url": "https://flakehub.com/f/cachix/git-hooks.nix/0.1.941"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773681856,
+        "narHash": "sha256-+bRqxoFCJFO9ZTFhcCkzNXbDT3b8AEk88fyjB7Is6eo=",
+        "rev": "57d5560ee92a424fb71fde800acd6ed2c725dfce",
+        "revCount": 6358,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/nix-community/home-manager/0.1.6358%2Brev-57d5560ee92a424fb71fde800acd6ed2c725dfce/019cf7ae-4379-770b-aeee-6ca86d787f46/source.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://flakehub.com/f/nix-community/home-manager/0.1"
+      }
+    },
     "import-tree": {
       "locked": {
         "lastModified": 1773693634,
@@ -273,11 +292,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773773459,
-        "narHash": "sha256-BYPIah2l+fh1cHoiL8YJneXO5fexvzekJ1F6rqX6DGI=",
+        "lastModified": 1773778984,
+        "narHash": "sha256-ZlCqR6oaDmdbvQQnN9Mo+x06gOPsnMu6grbXeU7u4Pc=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "fec0ce167cd2d8389a5571efedf47239f6302cee",
+        "rev": "86d1280c0f70f21d8d5b0eda12355115e4570a66",
         "type": "github"
       },
       "original": {
@@ -290,11 +309,28 @@
       "inputs": {
         "determinate": "determinate",
         "flake-parts": "flake-parts_2",
+        "home-manager": "home-manager",
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur",
+        "secrets": "secrets",
         "zen-browser": "zen-browser"
+      }
+    },
+    "secrets": {
+      "locked": {
+        "lastModified": 1773781028,
+        "narHash": "sha256-MYKpp2c1jRb6ja9wwXvNu6rM+SCOw8ZSISY7kOT8Dlk=",
+        "owner": "monyx-nuked",
+        "repo": "empty-flake",
+        "rev": "7196e3572d1ea5591d1b532ae9c07c6ad8485c07",
+        "type": "github"
+      },
+      "original": {
+        "owner": "monyx-nuked",
+        "repo": "empty-flake",
+        "type": "github"
       }
     },
     "zen-browser": {
