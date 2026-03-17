@@ -59,7 +59,7 @@
         "aarch64-linux"
       ];
       imports = [
-        (inputs.import-tree ./parts)
+        (inputs.import-tree ./src)
       ];
     });
 }
