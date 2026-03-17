@@ -22,13 +22,14 @@
     manix
     optnix
     devenv
-    nushell
+    # nushell
     # Utilites
     just
     gh
     lazygit
     bat
     eza
+    fastfetch
   ];
 
   # https://devenv.sh/languages/
@@ -53,6 +54,7 @@
     git --version
     alias cat='bat'
     alias ls='eza --icons'
+    fastfetch
   '';
 
   # https://devenv.sh/tasks/
