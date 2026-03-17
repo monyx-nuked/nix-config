@@ -33,6 +33,11 @@ repl:
 repll arg:
     @nix repl {{arg}}
 
+# alias
+[group('nix')]
+dev:
+    @nix develop .
+
 # dev-shell on current-dir
 [group('nix')]
 develop:
