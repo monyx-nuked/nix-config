@@ -44,8 +44,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
-      url = "path:/home/monyx/nixos-secrets";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:monyx-nuked/empty-flake";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "https://flakehub.com/f/nix-community/home-manager/0.1";
