@@ -54,6 +54,7 @@
     git --version
     alias cat='bat'
     alias ls='eza --icons'
+    clear
     fastfetch
   '';
 
