@@ -33,7 +33,7 @@ repl:
 repll arg:
     @nix repl {{arg}}
 
-# alias
+# alias for develop
 [group('nix')]
 dev:
     @nix develop .
@@ -52,3 +52,13 @@ developp which:
 [group('nix')]
 developpp arg:
     @nix develop {{arg}}
+
+# Format every file .nix in this folder
+[group('nix')]
+fmt:
+    @nix fmt .
+
+# Format with args
+[group('nix')]
+fmtt arg:
+    @nix fmt {{arg}}
