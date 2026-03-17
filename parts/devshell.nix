@@ -1,7 +1,7 @@
 {
   perSystem = {pkgs, ...}: {
     devShells.default = pkgs.mkShell {
-      name = "nix-devshell";
+      name = "devenv";
 
       packages = with pkgs; [
         devenv
