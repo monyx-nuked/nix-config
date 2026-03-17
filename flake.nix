@@ -2,6 +2,7 @@
   description = "Flake for My Nix Configurations";
   nixConfig = {
     cores = 0;
+    auto-optimise-store = true;
     extra-trusted-users = [
       "monyx" # ADD TRUSTED USERS IN YOUR OWN CONFIG
     ];
