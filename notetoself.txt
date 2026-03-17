@@ -1,1 +1,0 @@
-fully read github:workflow/dotfiles structure and replicate it

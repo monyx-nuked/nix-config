@@ -38,6 +38,11 @@
     };
     # modules importer: import-tree
     import-tree.url = "github:vic/import-tree";
+    # zen-browser
+    zen-browser = {
+      url = "https://flakehub.com/f/youwen5/zen-browser/*";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {flake-parts, ...} @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} ({...}: {

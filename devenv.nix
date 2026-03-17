@@ -1,8 +1,8 @@
 {
   pkgs,
-  lib,
-  config,
-  inputs,
+  # lib,
+  # config,
+  # inputs,
   ...
 }: {
   # https://devenv.sh/basics/
@@ -30,6 +30,8 @@
     bat
     eza
     fastfetch
+    fzf
+    ripgrep
   ];
 
   # https://devenv.sh/languages/

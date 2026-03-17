@@ -4,7 +4,8 @@
     "editor.wordWrap": "on",
     "git.autofetch": true,
     "nix.enableLanguageServer": true, // Enable LSP.
-    "nix.serverPath": "nil", // The path to the LSP server executable.
+    "nix.serverPath": "nixd", // The path to the LSP server executable. (FOR OPTIONS WRITING)
+    // "nix.serverPath": "nil", // The path to the LSP server executable. (FOR SYNTAX WRITING)
     "nix.serverSettings": {
       // check https://github.com/oxalica/nil/blob/main/docs/configuration.md for all options available
       "nil": {

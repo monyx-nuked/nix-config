@@ -1,0 +1,27 @@
+{...}: {
+  flake.modules.nixos.printing = {pkgs, ...}: {
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [
+        # Net-discovery
+        cups-filters
+        cups-browsed
+        # Drivers
+        gutenprint
+        ghostscript
+        gutenprintBin
+        epson-escpr2
+      ];
+    };
+    services.ipp-usb.enable = true;
+    # Extra Groups
+    users.users.monyx.extraGroups = ["lpadmin"];
+    listenAddresses = ["127.0.0.1:631"];
+    services.avahi = {
+      # Required for printing net-discovery
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
+  };
+}
