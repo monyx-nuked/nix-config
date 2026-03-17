@@ -61,7 +61,7 @@ shell-pick which:
 
 # 🔄 Update all flake inputs and commit lock file
 [group('maintenance')]
-update:
+up:
     @echo "{{yellow}}🔄 Updating flake inputs...{{reset}}"
     @nix flake update --commit-lock-file && echo "{{green}}✅ Inputs updated and committed!{{reset}}"
 
