@@ -273,11 +273,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773751136,
-        "narHash": "sha256-n+zXup9zGVgKSfePlPx1IMgM1jk/GiRodduiVMjNJYk=",
+        "lastModified": 1773773459,
+        "narHash": "sha256-BYPIah2l+fh1cHoiL8YJneXO5fexvzekJ1F6rqX6DGI=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "3bf18ed893239a1e6fa435a203c1610b6bbc0633",
+        "rev": "fec0ce167cd2d8389a5571efedf47239f6302cee",
         "type": "github"
       },
       "original": {
@@ -293,7 +293,27 @@
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nur": "nur"
+        "nur": "nur",
+        "zen-browser": "zen-browser"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773722260,
+        "narHash": "sha256-U8MsSiqqYZHR3oKE+cCZ2AJt3b4LcXs+oQuNLipaO78=",
+        "rev": "0e6e43342fb3e9a3439fafa777d8cdf98e4ffc49",
+        "revCount": 288,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/youwen5/zen-browser/0.1.288%2Brev-0e6e43342fb3e9a3439fafa777d8cdf98e4ffc49/019cfa16-f2fe-7edf-bde4-344cd9a291a4/source.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://flakehub.com/f/youwen5/zen-browser/%2A"
       }
     }
   },
