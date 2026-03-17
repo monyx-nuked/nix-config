@@ -30,6 +30,7 @@
     determinate.url = "https://flakehub.com/f/determinatesystems/determinate/*";
     # nixpkgs or repos
     nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.1";
+    nixpkgs-stable.url = "https://flakehub.com/f/nixos/nixpkgs/*";
     nur = {
       url = "github:nix-community/nur";
       inputs.nixpkgs.follows = "nixpkgs";
