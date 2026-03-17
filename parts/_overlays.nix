@@ -1,3 +1,4 @@
+# This is a template and I do not reccomend using it
 {inputs, ...}: {
   perSystem = {system, ...}: let
     commonOverlays = {
