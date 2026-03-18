@@ -23,9 +23,12 @@
         fzf
         ripgrep
         fastfetch
+        fish
       ];
       shellHook = ''
         fastfetch
+        fish &
+        exit
       '';
     };
   };
