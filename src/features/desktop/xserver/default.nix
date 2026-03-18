@@ -1,8 +1,14 @@
 {...}: {
-  flake.modules.nixos.xserver = {pkgs, ...}: {
-    services.xserver = {
-      enable = true;
-      excludePackages = with pkgs; [xterm];
+  flake.modules.nixos.xserver = {
+    config,
+    lib,
+    pkgs,
+    ...
+  }:
+    lib.mkIf config.host.hasScreen {
+      services.xserver = {
+        enable = true;
+        excludePackages = with pkgs; [xterm];
+      };
     };
-  };
 }
