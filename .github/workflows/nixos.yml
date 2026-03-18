@@ -41,7 +41,7 @@ jobs:
                 nix build .#nixosConfigurations.necrozma.config.system.build.toplevel \
                   -L \
                   --accept-flake-config
-    build-shells:
+    build-devenv:
         runs-on: ubuntu-latest
         steps:
           - name: Free Disk Space (Ubuntu)
@@ -64,8 +64,8 @@ jobs:
                 name: monyx-nix-config
                 authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
             
-          - name: "Build NixOS config ❄"
+          - name: "Build devenv shell config ❄"
             run: |
-                nix build .#devShells.x86_64-linux.default \
+                nix build .#devShells.x86_64-linux.devenv \
                   -L \
                   --accept-flake-config

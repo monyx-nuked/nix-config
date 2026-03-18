@@ -19,18 +19,22 @@
     #     exit
     #   '';
     # };
-    devShells.default = let
-      commonDevEnvModules = builtins.attrValues config.flake.modules.devEnv;
-    in
-      inputs.devenv.lib.mkShell {
-        inherit inputs pkgs;
-        modules =
-          commonDevEnvModules
-          ++ [
-            {
-              devenv.root = inputs.self.outPath;
-            }
-          ];
+
+    devShells = {
+      default = pkgs.mkShellNoCC {
+        name = "default shell";
+        packages = with pkgs; [
+          devenv
+          direnv
+        ];
       };
+      devenv = let
+        commonDevEnvModules = builtins.attrValues config.flake.modules.devEnv;
+      in
+        inputs.devenv.lib.mkShell {
+          inherit inputs pkgs;
+          modules = commonDevEnvModules;
+        };
+    };
   };
 }
