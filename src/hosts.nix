@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   inputs,
   ...
 }: let
@@ -22,7 +23,7 @@
 
   commonOverlays = {
     stable = import inputs.nixpkgs-stable {
-      system = "x86_64-linux";
+      system = pkgs.stdenv.hostPlatform.system;
       config.allowUnfree = true;
     };
   };
