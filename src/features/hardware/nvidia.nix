@@ -10,7 +10,7 @@
         prime.offload.enableOffloadCmd = true;
         open = true;
         modesetting.enable = true;
-        nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
+        package = config.boot.kernelPackages.nvidiaPackages.production;
       };
     };
 }
