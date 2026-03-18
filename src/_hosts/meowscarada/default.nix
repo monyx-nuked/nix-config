@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   imports = [
     ./hardware-scan.nix
   ];
@@ -12,5 +12,6 @@
     nvidiaBusId = "PCI:1:0:0";
   };
   networking.hostName = "meowscarda";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   system.stateVersion = "25.11";
 }
