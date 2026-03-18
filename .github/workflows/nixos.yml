@@ -38,4 +38,4 @@ jobs:
             
           - name: "Build NixOS config ❄"
             run: |
-                nix build .#nixosConfigurations.necrozma.config.system.build.toplevel
+                nix build .#nixosConfigurations.necrozma.config.system.build.toplevel --accept-flake-config
