@@ -20,7 +20,7 @@
     #   '';
     # };
     devShells.default = let
-      commonDevEnvModules = builtins.attrValues config.flake.modules.devEnv;
+      commonDevEnvModules = builtins.attrValues inputs.self.modules.devEnv;
     in
       inputs.devenv.lib.mkShell {
         inherit inputs pkgs;
