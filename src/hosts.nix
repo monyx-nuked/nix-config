@@ -4,7 +4,7 @@
   inputs,
   ...
 }: let
-  inherit (inputs) nixpkgs determinate nur home-manager;
+  inherit (inputs) nixpkgs determinate nur home-manager nixos-wsl;
 
   nixosModules = builtins.attrValues config.flake.modules.nixos;
   homeManagerModules = builtins.attrValues config.flake.modules.homeManager;
@@ -141,6 +141,21 @@ in {
         stateVersion = "25.11";
         homeStateVersion = "25.11";
       };
+    };
+    necrozma = mkHost {
+      name = "necrozma";
+      hostModule = ./_hosts/necrozma;
+      hostConfig = {
+        hostname = "necrozma";
+        isLaptop = false;
+        hasNvidia = false;
+        hasIntel = false;
+        stateVersion = "25.11";
+        homeStateVersion = "25.11";
+      };
+      extraModules = [
+        nixos-wsl.nixosModules.default
+      ];
     };
   };
 }
