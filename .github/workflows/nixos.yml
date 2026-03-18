@@ -1,0 +1,41 @@
+name: NixOS
+concurrency: nixos
+
+on:
+    pull_request:
+    push:
+        branches:
+          - master
+        paths-ignore:
+          - "README.md"
+          - "devenv.nix"
+          - "devenv.lock"
+          - "devenv.yaml"
+          - ".gitignore"
+jobs:
+    build-necrozma:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Free Disk Space (Ubuntu)
+            uses: thiagokokada/free-disk-space@main
+            with:
+                tool-cache: true
+                usrmisc: true
+                usrlocal: true
+                opt: true
+                varcache: true
+        
+          - uses: actions/checkout@v6.0.2
+
+          - name: "Install Nix ❄"
+            uses: DeterminateSystems/determinate-nix-action@v3.17.0
+
+          - name: "Install Cachix ❄"
+            uses: cachix/cachix-action@v16
+            with:
+                name: monyx-nix-config
+                authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+            
+          - name: "Build NixOS config ❄"
+            run: |
+                nix build .#nixosConfigurations.necrozma.config.system.build.toplevel
