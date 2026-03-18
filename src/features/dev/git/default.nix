@@ -6,22 +6,24 @@ _: {
       glab
     ];
 
-    programs.difftastic = {
-      enable = true;
-      git.enable = true;
-    };
-
-    programs.git = {
-      enable = true;
-      settings = {
-        user.email = "helix.nuked@proton.me";
-        user.name = "monyx-nuked";
+    programs = {
+      difftastic = {
+        enable = true;
+        git.enable = true;
       };
-    };
 
-    programs.mergiraf = {
-      enable = true;
-      enableGitIntegration = true;
+      git = {
+        enable = true;
+        settings = {
+          user.email = "helix.nuked@proton.me";
+          user.name = "monyx-nuked";
+        };
+      };
+
+      mergiraf = {
+        enable = true;
+        enableGitIntegration = true;
+      };
     };
   };
 }
