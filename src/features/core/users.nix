@@ -4,7 +4,7 @@
     pkgs,
     ...
   }: {
-    users.mutableUsers = false;
+    users.mutableUsers = true;
     users.users.monyx = {
       description = "Muhammad Iso";
       extraGroups = ["disk"];
