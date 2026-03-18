@@ -6,6 +6,8 @@ _: {
       nixd
       nix-melt
       nix-tree
+      nix-init
+      nurl
       deadnix
       manix
       statix
