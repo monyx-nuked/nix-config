@@ -1,13 +1,13 @@
 _: {
   flake.modules.homeManager.wealthfolio = {pkgs, ...}: let
-    wealthfolio = pkgs.unstable.wealthfolio.overrideAttrs (oldAttrs: rec {
+    wealthfolio = pkgs.wealthfolio.overrideAttrs (oldAttrs: rec {
       version = "3.1.2";
 
       src = pkgs.fetchFromGitHub {
         owner = "afadil";
         repo = "wealthfolio";
-        rev = "v${version}";
-        hash = "sha256-/ft1QQicuwMiLNxojwyeWYeNejXabTDL7NOGWq+1Y5E=";
+        tag = "v${version}";
+        hash = "sha256-JLflqtT24VIGbMIndLqXApEkhbV1kEJT7FcBvO5Kx0g=";
       };
 
       pnpmDeps = pkgs.fetchPnpmDeps {
@@ -22,11 +22,11 @@ _: {
       cargoRoot = ".";
       buildAndTestSubdir = cargoRoot;
 
-      cargoDeps = pkgs.unstable.rustPlatform.fetchCargoVendor {
+      cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
         inherit src cargoRoot;
         pname = "wealthfolio";
         inherit version;
-        hash = "sha256-+KulyYaenGA82xgZkkblcc2SVN4MWqHunpNmi5SX4fs=";
+        hash = "sha256-r01/Y4l52gESRKbDGTY8tI8r5MRSyRHa77/+UV/4wV8=";
       };
 
       postPatch = ''
