@@ -28,6 +28,7 @@
     };
     # nix's better altarnative
     determinate.url = "https://flakehub.com/f/determinatesystems/determinate/*";
+    fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*";
     # nixpkgs or repos
     nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.1";
     nixpkgs-stable.url = "https://flakehub.com/f/nixos/nixpkgs/*";
