@@ -2,6 +2,7 @@
   flake.modules.nixos.printing = {pkgs, ...}: {
     services.printing = {
       enable = true;
+      listenAddresses = ["127.0.0.1:631"];
       drivers = with pkgs; [
         # Net-discovery
         cups-filters
@@ -16,7 +17,6 @@
     services.ipp-usb.enable = true;
     # Extra Groups
     users.users.monyx.extraGroups = ["lpadmin"];
-    listenAddresses = ["127.0.0.1:631"];
     services.avahi = {
       # Required for printing net-discovery
       enable = true;
