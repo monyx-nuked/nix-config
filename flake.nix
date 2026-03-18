@@ -4,6 +4,8 @@
     cores = 0;
     auto-optimise-store = true;
     extra-trusted-users = [
+      "@sudo"
+      "@wheel"
       "monyx" # ADD TRUSTED USERS IN YOUR OWN CONFIG
     ];
     extra-experimental-features = [
@@ -14,10 +16,12 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://install.determinate.systems"
+      "https://monyx-nix-config.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
+      "monyx-nix-config.cachix.org-1:Z8BLQ0CFcXVxq67jpyfgIkHy4/HCghQp4/vsDdNUG9w="
     ];
   };
   inputs = {
