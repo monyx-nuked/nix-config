@@ -1,4 +1,4 @@
-{...}: {
+{inputs, ...}: {
   flake.modules.nixos.nix-settings = {pkgs, ...}: {
     nix = {
       settings = {
@@ -23,8 +23,8 @@
       };
 
       nixPath = [
-        "nixpkgs=${pkgs.path}"
-        "nixos-stable=${pkgs.stable.path}"
+        "nixpkgs=${inputs.nixpkgs}"
+        "nixpkgs-stable=${inputs.nixpkgs-stable}"
       ];
     };
 
