@@ -1,9 +1,9 @@
-{inputs, ...}: {
-  perSystem = {
-    pkgs,
-    config,
-    ...
-  }: {
+{
+  inputs,
+  config,
+  ...
+}: {
+  perSystem = {pkgs, ...}: {
     # devShells.default = pkgs.mkShell {
     #   name = "devenv";
 
@@ -20,11 +20,17 @@
     #   '';
     # };
     devShells.default = let
-      commonDevEnvModules = builtins.attrValues inputs.self.modules.devEnv;
+      commonDevEnvModules = builtins.attrValues config.flake.modules.devEnv;
     in
       inputs.devenv.lib.mkShell {
         inherit inputs pkgs;
-        modules = commonDevEnvModules;
+        modules =
+          commonDevEnvModules
+          ++ [
+            {
+              devenv.root = inputs.self.outPath;
+            }
+          ];
       };
   };
 }
