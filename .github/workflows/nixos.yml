@@ -64,8 +64,8 @@ jobs:
                 name: monyx-nix-config
                 authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
             
-          - name: "Build devenv shell config ❄"
+          - name: "Build devenv shell config (x86_64-linux) ❄"
             run: |
-                nix build .#devShells.x86_64-linux.devenv \
+                nix build .#devShells.x86_64-linux.default \
                   -L \
                   --accept-flake-config
