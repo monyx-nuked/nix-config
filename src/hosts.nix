@@ -50,6 +50,11 @@
         default = false;
         description = "Whether this machine has Intel";
       };
+      hasScreen = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Whether this machine has screen";
+      };
       stateVersion = lib.mkOption {
         type = lib.types.str;
         default = "25.11";
@@ -139,6 +144,7 @@ in {
         isLaptop = true;
         hasNvidia = true;
         hasIntel = true;
+        hasScreen = true;
         stateVersion = "25.11";
         homeStateVersion = "25.11";
       };
@@ -151,6 +157,7 @@ in {
         isLaptop = false;
         hasNvidia = false;
         hasIntel = false;
+        hasScreen = false;
         stateVersion = "25.11";
         homeStateVersion = "25.11";
       };
