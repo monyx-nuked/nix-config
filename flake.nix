@@ -66,6 +66,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     devenv = {
+      url = "github:cachix/devenv";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
   };
   outputs = {flake-parts, ...} @ inputs:
