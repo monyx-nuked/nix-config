@@ -120,7 +120,7 @@
             home-manager =
               commonHomeManagerSettings
               // {
-                users.monyx = {pkgs, ...}: {
+                users.monyx = {...}: {
                   home.stateVersion = hostConfig.homeStateVersion;
                 };
               };
