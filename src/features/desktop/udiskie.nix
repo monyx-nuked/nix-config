@@ -1,13 +1,8 @@
 {...}: {
-  flake.modules.homeManager.udiskie = {
-    config,
-    lib,
-    ...
-  }:
-    lib.mkIf config.host.hasScreen {
-      services.udiskie = {
-        enable = true;
-        automount = false;
-      };
+  flake.modules.homeManager.udiskie = {...}: {
+    services.udiskie = {
+      enable = true;
+      automount = false;
     };
+  };
 }

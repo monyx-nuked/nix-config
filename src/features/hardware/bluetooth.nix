@@ -9,14 +9,9 @@
       hardware.bluetooth.enable = true;
     };
 
-  flake.modules.homeManager.bluetuith = {
-    config,
-    lib,
-    ...
-  }:
-    lib.mkIf config.host.hasScreen {
-      programs.bluetuith = {
-        enable = true;
-      };
+  flake.modules.homeManager.bluetuith = {...}: {
+    programs.bluetuith = {
+      enable = true;
     };
+  };
 }
