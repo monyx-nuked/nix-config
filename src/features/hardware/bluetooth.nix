@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.nixos.bluetooth = {
     config,
     lib,
@@ -9,7 +9,7 @@
       hardware.bluetooth.enable = true;
     };
 
-  flake.modules.homeManager.bluetuith = {...}: {
+  flake.modules.homeManager.bluetuith = _: {
     programs.bluetuith = {
       enable = true;
     };

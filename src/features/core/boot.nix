@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.nixos.boot = {lib, ...}: {
     boot = {
       loader.systemd-boot = {

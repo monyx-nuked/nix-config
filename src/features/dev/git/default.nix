@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.homeManager.git = {pkgs, ...}: {
     home.packages = with pkgs; [
       delta # syntax highlighter for git

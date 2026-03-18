@@ -1,5 +1,5 @@
-{...}: {
-  flake.modules.homeManager.udiskie = {...}: {
+_: {
+  flake.modules.homeManager.udiskie = _: {
     services.udiskie = {
       enable = true;
       automount = false;

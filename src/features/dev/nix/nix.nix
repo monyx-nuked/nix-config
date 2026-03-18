@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.nixos.dev-nix = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       alejandra

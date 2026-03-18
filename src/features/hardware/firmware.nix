@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.nixos.firmware = {
     config,
     lib,

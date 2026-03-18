@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.nixos.security = {pkgs, ...}: {
     # FIXME: consider adding gnome-keyring or not
     # services.gnome.gnome-keyring.enable = true;

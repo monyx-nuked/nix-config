@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.nixos.core-packages = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       wget

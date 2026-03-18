@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.nixos.display-manager = {
     config,
     lib,

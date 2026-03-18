@@ -1,4 +1,4 @@
-{...}: {
+_: {
   flake.modules.homeManager.wealthfolio = {pkgs, ...}: let
     wealthfolio = pkgs.unstable.wealthfolio.overrideAttrs (oldAttrs: rec {
       version = "3.1.2";

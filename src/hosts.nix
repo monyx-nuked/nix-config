@@ -23,7 +23,7 @@
 
   commonOverlays = {
     stable = import inputs.nixpkgs-stable {
-      system = pkgs.stdenv.hostPlatform.system;
+      inherit (pkgs.stdenv.hostPlatform) system;
       config.allowUnfree = true;
     };
   };
@@ -126,7 +126,7 @@
             home-manager =
               commonHomeManagerSettings
               // {
-                users.monyx = {...}: {
+                users.monyx = _: {
                   home.stateVersion = hostConfig.homeStateVersion;
                 };
               };
