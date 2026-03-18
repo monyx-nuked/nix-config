@@ -1,11 +1,11 @@
 {...}: {
-  flake.modules.nixos.boot = {...}: {
+  flake.modules.nixos.boot = {lib, ...}: {
     boot = {
       loader.systemd-boot = {
-        enable = true;
-        memtest86.enable = true;
+        enable = lib.mkDefault true;
+        memtest86.enable = lib.mkDefault true;
       };
-      loader.efi.canTouchEfiVariables = true;
+      loader.efi.canTouchEfiVariables = lib.mkDefault true;
       consoleLogLevel = 7;
       initrd.systemd.enable = true;
     };
