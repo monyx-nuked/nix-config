@@ -26,8 +26,11 @@
         fish
       ];
       shellHook = ''
-        fastfetch
-        exec fish
+        if [ -z "$DEVSHELL_ACTIVE" ]; then
+          export DEVSHELL_ACTIVE=1
+          fastfetch
+          exec fish
+        fi
       '';
     };
   };
