@@ -45,11 +45,11 @@ meta:
 
 # --- development ---
 
-# 🐚 Enter dev shell (default: devenv)
+# 🐚 Enter dev shell (default: curreny flake)
 [group('dev')]
-shell arg=".#devenv":
+shell arg=".":
     @echo "{{green}}🐚 Entering dev shell...{{reset}}"
-    @nix develop --no-pure-eval {{arg}}
+    @nix develop {{arg}}
 
 # 🐚 Enter a specific dev shell by name
 [group('dev')]

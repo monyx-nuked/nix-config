@@ -4,37 +4,31 @@
   ...
 }: {
   perSystem = {pkgs, ...}: {
-    # devShells.default = pkgs.mkShell {
-    #   name = "devenv";
-
-    #   packages = with pkgs; [
-    #     devenv
-    #   ];
-
-    #   shellHook = ''
-    #     cat ${inputs.self.outPath}/res/devshell.txt
-    #     alias devenvsn='devenv shell --tui "nu --no-std-lib --no-config-file"'
-    #     alias devenvs='devenv shell --tui'
-    #     devenv shell --tui # "nu --no-std-lib --no-config-file"
-    #     exit
-    #   '';
-    # };
-
-    devShells = {
-      default = pkgs.mkShellNoCC {
-        name = "default shell";
-        packages = with pkgs; [
-          devenv
-          direnv
-        ];
-      };
-      devenv = let
-        commonDevEnvModules = builtins.attrValues config.flake.modules.devEnv;
-      in
-        inputs.devenv.lib.mkShell {
-          inherit inputs pkgs;
-          modules = commonDevEnvModules;
-        };
+    devShells.default = pkgs.mkShellNoCC {
+      name = "devshell";
+      packages = with pkgs; [
+        alejandra
+        nixd
+        nil
+        nix-melt
+        nix-tree
+        nix-init
+        nh
+        deadnix
+        statix
+        manix
+        optnix
+        just
+        gh
+        fzf
+        ripgrep
+        fastfetch
+        fish
+      ];
+      shellHook = ''
+        fastfetch
+        exec fish
+      '';
     };
   };
 }
