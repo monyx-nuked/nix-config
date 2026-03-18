@@ -11,7 +11,7 @@
         };
       };
     };
-    systemd.sleep.extraConfig = ''
+    systemd.sleep.settings.Sleep = ''
       HibernateDelaySec=1h
     '';
     # Research into this later on

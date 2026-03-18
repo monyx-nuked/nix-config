@@ -13,8 +13,10 @@
 
     programs.git = {
       enable = true;
-      user.email = "helix.nuked@proton.me";
-      user.name = "monyx-nuked";
+      settings = {
+        user.email = "helix.nuked@proton.me";
+        user.name = "monyx-nuked";
+      };
     };
 
     programs.mergiraf.enable = true;
