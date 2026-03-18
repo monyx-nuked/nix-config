@@ -1,8 +1,7 @@
 {...}: {
-  flake.modules.homeManager.nh = {config, ...}: {
+  flake.modules.homeManager.nh = {...}: {
     programs.nh = {
       enable = true;
-      flake = "${config.home.homeDirectory}/nix-config";
     };
   };
 }
