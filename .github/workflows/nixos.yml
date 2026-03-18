@@ -35,10 +35,9 @@ jobs:
             with:
                 name: monyx-nix-config
                 authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-                pushFilter: ".*"
             
           - name: "Build NixOS config ❄"
             run: |
                 nix build .#nixosConfigurations.necrozma.config.system.build.toplevel \
-                  --print-out-paths \
-                  --accept-flake-config | cachix push monyx-nix-config
+                  -L \
+                  --accept-flake-config
