@@ -2,6 +2,7 @@
   flake.modules.nixos.nix-settings = {pkgs, ...}: {
     nix = {
       settings = {
+        eval-cores = 0; # Determinate Package Manager special feature
         extra-trusted-users = [
           "monyx"
           "@wheel"
