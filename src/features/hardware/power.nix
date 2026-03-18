@@ -11,9 +11,9 @@
         };
       };
     };
-    systemd.sleep.settings.Sleep = ''
-      HibernateDelaySec=1h
-    '';
+    systemd.sleep.settings.Sleep = {
+      HibernateDelaySec = "1h";
+    };
     # Research into this later on
     # services.auto-cpufreq = {
     #   enable = true;
