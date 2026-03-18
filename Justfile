@@ -74,4 +74,4 @@ fmt arg=".":
 # 🗑️  Garbage collect
 [group('maintenance')]
 gc:
-    nix-collect-garbage -d
+    nix-collect-garbage --delete-older-than 7d
