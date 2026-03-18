@@ -19,23 +19,23 @@
     #   enable = true;
     #   settings = {};
     # };
-    security.sudo.extraRules = [
-      {
-        users = ["monyx"];
-        commands = [
-          {
-            command = "${pkgs.auto-cpufreq}/bin/auto-cpufreq --force *";
-            options = ["NOPASSWD" "SETENV"];
-          }
-          {
-            command = "/run/current-system/sw/bin/auto-cpufreq --force *";
-            options = ["NOPASSWD" "SETENV"];
-          }
-        ];
-      }
-    ];
+    # security.sudo.extraRules = [
+    #   {
+    #     users = ["monyx"];
+    #     commands = [
+    #       {
+    #         command = "${pkgs.auto-cpufreq}/bin/auto-cpufreq --force *";
+    #         options = ["NOPASSWD" "SETENV"];
+    #       }
+    #       {
+    #         command = "/run/current-system/sw/bin/auto-cpufreq --force *";
+    #         options = ["NOPASSWD" "SETENV"];
+    #       }
+    #     ];
+    #   }
+    # ];
 
     # Dbus service providing historical battery life stats, ...
-    services.upower.enable = true;
+    # services.upower.enable = true;
   };
 }
