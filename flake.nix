@@ -2,6 +2,7 @@
   description = "Flake for My Nix Configurations";
   nixConfig = {
     cores = 0;
+    eval-cores = 0; # Determinate Package Manager special feature
     auto-optimise-store = true;
     extra-trusted-users = [
       "@sudo"
@@ -17,11 +18,15 @@
       "https://nix-community.cachix.org"
       "https://install.determinate.systems"
       "https://monyx-nix-config.cachix.org"
+      "https://devenv.cachix.org"
+      "https://cachix.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
       "monyx-nix-config.cachix.org-1:Z8BLQ0CFcXVxq67jpyfgIkHy4/HCghQp4/vsDdNUG9w="
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+      "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
     ];
   };
   inputs = {
@@ -59,6 +64,8 @@
     nixos-wsl = {
       url = "github:nix-community/nixos-wsl/main";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    devenv = {
     };
   };
   outputs = {flake-parts, ...} @ inputs:
