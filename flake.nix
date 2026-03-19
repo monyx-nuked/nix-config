@@ -71,7 +71,7 @@
         "aarch64-linux"
       ];
       imports = [
-        (inputs.import-tree ./src)
+        (inputs.import-tree ./modules)
       ];
     });
 }
