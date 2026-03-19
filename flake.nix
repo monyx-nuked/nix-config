@@ -51,10 +51,7 @@
       url = "https://flakehub.com/f/youwen5/zen-browser/*";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    secrets = {
-      url = "github:monyx-nuked/empty-flake";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
+    secrets.url = "github:monyx-nuked/empty-flake";
     home-manager = {
       url = "https://flakehub.com/f/nix-community/home-manager/0.1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -66,16 +63,5 @@
   };
   outputs =
     { flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } (
-      { ... }:
-      {
-        systems = [
-          "x86_64-linux"
-          "aarch64-linux"
-        ];
-        imports = [
-          (inputs.import-tree ./modules)
-        ];
-      }
-    );
+    flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
