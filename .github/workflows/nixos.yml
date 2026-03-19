@@ -6,6 +6,7 @@ on:
     push:
         branches:
           - master
+          - reconstruct
         paths-ignore:
           - "README.md"
           - ".gitignore"
