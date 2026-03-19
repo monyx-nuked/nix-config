@@ -8,9 +8,6 @@ on:
           - master
         paths-ignore:
           - "README.md"
-          - "devenv.nix"
-          - "devenv.lock"
-          - "devenv.yaml"
           - ".gitignore"
 jobs:
     build-necrozma:
