@@ -1,5 +1,4 @@
-_:
-{
+_: {
   # persystem: generate outputs per-system
   perSystem =
     { pkgs, ... }:
