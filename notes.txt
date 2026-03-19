@@ -1,1 +1,0 @@
-re-implement host-specific checks for hm modules using osConfig
