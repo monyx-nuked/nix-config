@@ -1,5 +1,4 @@
 {
-    "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
     "editor.fontFamily": "\"JetBrainsMono Nerd Font\", Consolas, 'Courier New', monospace",
     "editor.wordWrap": "on",
     "git.autofetch": true,
