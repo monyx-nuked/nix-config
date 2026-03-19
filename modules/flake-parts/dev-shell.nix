@@ -1,10 +1,8 @@
-{ inputs, ... }:
+_:
 {
   perSystem =
     { pkgs, ... }:
     {
-      devShells.default = pkgs.mkShell {
-
-      };
+      devShells.default = pkgs.mkShell { };
     };
 }
