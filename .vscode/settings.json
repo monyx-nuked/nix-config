@@ -12,12 +12,12 @@
         //  "ignored": ["unused_binding", "unused_with"],
         // },
         "formatting": {
-          "command": ["alejandra"],
+          "command": ["nixfmt -s -v"],
         },
       },
       "nixd": {
         "formatting": {
-          "command": ["alejandra"],
+          "command": ["nixfmt -s -v"],
         },
       },
     },
