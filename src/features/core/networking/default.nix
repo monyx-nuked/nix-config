@@ -1,12 +1,13 @@
 _: {
-  flake.modules.nixos.networking = {
-    config,
-    lib,
-    ...
-  }:
+  flake.modules.nixos.networking =
+    {
+      config,
+      lib,
+      ...
+    }:
     lib.mkIf config.host.hasScreen {
       networking.networkmanager.enable = true;
-      users.users.monyx.extraGroups = ["networkmanager"];
+      users.users.monyx.extraGroups = [ "networkmanager" ];
       # Disable dhcpcd in favor of NetworkManager
       networking.dhcpcd.enable = false;
       # Disable waiting for network connectivity

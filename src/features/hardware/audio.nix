@@ -1,16 +1,17 @@
 _: {
-  flake.modules.nixos.audio = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }:
+  flake.modules.nixos.audio =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     lib.mkIf config.host.hasScreen {
       environment.systemPackages = with pkgs; [
         alsa-utils
         qpwgraph # more extensive patchbay for pipewire
       ];
-      users.users.monyx.extraGroups = ["audio"];
+      users.users.monyx.extraGroups = [ "audio" ];
       # pipewire
       security.rtkit.enable = true;
       services.pipewire = {

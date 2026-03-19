@@ -4,22 +4,28 @@
   pkgs,
   inputs,
   ...
-}: let
-  inherit (inputs) nixpkgs determinate nur home-manager nixos-wsl;
+}:
+let
+  inherit (inputs)
+    nixpkgs
+    determinate
+    nur
+    home-manager
+    nixos-wsl
+    ;
 
   nixosModules = builtins.attrValues config.flake.modules.nixos;
   homeManagerModules = builtins.attrValues config.flake.modules.homeManager;
 
   # Secrets modules (CI-safe: when overridden with nixpkgs, these are empty)
   secretNixosModules =
-    if (inputs.secrets ? modules.nixos)
-    then builtins.attrValues inputs.secrets.modules.nixos
-    else [];
+    if (inputs.secrets ? modules.nixos) then builtins.attrValues inputs.secrets.modules.nixos else [ ];
 
   secretHomeModules =
-    if (inputs.secrets ? modules.homeManager)
-    then builtins.attrValues inputs.secrets.modules.homeManager
-    else [];
+    if (inputs.secrets ? modules.homeManager) then
+      builtins.attrValues inputs.secrets.modules.homeManager
+    else
+      [ ];
 
   commonOverlays = {
     stable = import inputs.nixpkgs-stable {
@@ -28,46 +34,48 @@
     };
   };
 
-  hostOptionsModule = {lib, ...}: {
-    options.host = {
-      hostname = lib.mkOption {
-        type = lib.types.str;
-        default = "nixos";
-        description = "Hostname of this machine";
-      };
-      isLaptop = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Whether this a laptop";
-      };
-      hasNvidia = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Whether this machine has NVIDIA";
-      };
-      hasIntel = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Whether this machine has Intel";
-      };
-      hasScreen = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Whether this machine has screen";
-      };
-      stateVersion = lib.mkOption {
-        type = lib.types.str;
-        default = "25.11";
-        description = "State Version of the NixOS for this host";
-      };
-      homeStateVersion = lib.mkOption {
-        # HAS TO BE DEFINED INSIDE HOST MODULES
-        type = lib.types.str;
-        default = "25.11";
-        description = "State Version of the Home-Manager for this host";
+  hostOptionsModule =
+    { lib, ... }:
+    {
+      options.host = {
+        hostname = lib.mkOption {
+          type = lib.types.str;
+          default = "nixos";
+          description = "Hostname of this machine";
+        };
+        isLaptop = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = "Whether this a laptop";
+        };
+        hasNvidia = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = "Whether this machine has NVIDIA";
+        };
+        hasIntel = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = "Whether this machine has Intel";
+        };
+        hasScreen = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = "Whether this machine has screen";
+        };
+        stateVersion = lib.mkOption {
+          type = lib.types.str;
+          default = "25.11";
+          description = "State Version of the NixOS for this host";
+        };
+        homeStateVersion = lib.mkOption {
+          # HAS TO BE DEFINED INSIDE HOST MODULES
+          type = lib.types.str;
+          default = "25.11";
+          description = "State Version of the Home-Manager for this host";
+        };
       };
     };
-  };
 
   commonNixosModules = [
     hostOptionsModule
@@ -98,12 +106,13 @@
       ];
   };
 
-  mkHost = {
-    name,
-    hostModule,
-    hostConfig,
-    extraModules ? [],
-  }:
+  mkHost =
+    {
+      name,
+      hostModule,
+      hostConfig,
+      extraModules ? [ ],
+    }:
     nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
@@ -123,18 +132,17 @@
           }
 
           {
-            home-manager =
-              commonHomeManagerSettings
-              // {
-                users.monyx = _: {
-                  home.stateVersion = hostConfig.homeStateVersion;
-                };
+            home-manager = commonHomeManagerSettings // {
+              users.monyx = _: {
+                home.stateVersion = hostConfig.homeStateVersion;
               };
+            };
           }
         ]
         ++ extraModules;
     };
-in {
+in
+{
   flake.nixosConfigurations = {
     meowscarada = mkHost {
       name = "meowscarada";

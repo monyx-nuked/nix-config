@@ -1,5 +1,7 @@
 {
-  perSystem = {pkgs, ...}: {
-    formatter = with pkgs; alejandra;
-  };
+  perSystem =
+    { pkgs, ... }:
+    {
+      formatter = with pkgs; alejandra;
+    };
 }

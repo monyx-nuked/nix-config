@@ -1,10 +1,11 @@
 _: {
-  flake.modules.nixos.power = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }:
+  flake.modules.nixos.power =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     lib.mkIf config.host.hasScreen {
       # This may save your battery but totally save your money
       services.thermald.enable = true;

@@ -1,9 +1,10 @@
 _: {
-  flake.modules.nixos.libinput = {
-    config,
-    lib,
-    ...
-  }:
+  flake.modules.nixos.libinput =
+    {
+      config,
+      lib,
+      ...
+    }:
     lib.mkIf config.host.hasScreen {
       services.libinput = {
         enable = true;

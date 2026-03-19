@@ -1,10 +1,11 @@
 _: {
-  flake.modules.nixos.display-manager = {
-    config,
-    lib,
-    pkgs,
-    ...
-  }:
+  flake.modules.nixos.display-manager =
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     lib.mkIf config.host.hasScreen {
       services.displayManager = {
         defaultSession = "plasma";

@@ -1,15 +1,16 @@
 _: {
-  flake.modules.nixos.printing = {
-    pkgs,
-    config,
-    lib,
-    ...
-  }:
+  flake.modules.nixos.printing =
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
     lib.mkIf config.host.hasScreen {
       services = {
         printing = {
           enable = true;
-          listenAddresses = ["127.0.0.1:631"];
+          listenAddresses = [ "127.0.0.1:631" ];
           drivers = with pkgs; [
             # Net-discovery
             cups-filters
@@ -30,6 +31,6 @@ _: {
         };
       };
       # Extra Groups
-      users.users.monyx.extraGroups = ["lpadmin"];
+      users.users.monyx.extraGroups = [ "lpadmin" ];
     };
 }
