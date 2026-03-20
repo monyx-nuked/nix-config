@@ -6,6 +6,7 @@ _: {
         delta # syntax highlighter for git
         github-cli
         glab
+	gitmoji-cli
       ];
 
       programs = {
