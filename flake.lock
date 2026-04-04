@@ -216,12 +216,12 @@
         ]
       },
       "locked": {
-        "lastModified": 1775104157,
-        "narHash": "sha256-rm/7k0D2J9SP30pyZ2C1HqarDncZDN6KAUI0gzgg4TA=",
-        "rev": "41e6e2ab37763c09db4e639033392cf40900440a",
-        "revCount": 6444,
+        "lastModified": 1775268934,
+        "narHash": "sha256-Sa5tW5kYPJornQEkFVD43F/0d4/WP+/GLTNktTFe2qU=",
+        "rev": "9dc93220c1c9a410ef6277d6dc55c571d9e592d0",
+        "revCount": 6450,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/nix-community/home-manager/0.1.6444%2Brev-41e6e2ab37763c09db4e639033392cf40900440a/019d4c75-1eb2-7c61-b1e7-6455cfa716fd/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/nix-community/home-manager/0.1.6450%2Brev-9dc93220c1c9a410ef6277d6dc55c571d9e592d0/019d5647-2c75-75c3-a1b8-94f3055a4f79/source.tar.gz"
       },
       "original": {
         "type": "tarball",
@@ -398,11 +398,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775134610,
-        "narHash": "sha256-YPX/Q7a6vDwJPNenjVIy/aQWiXRrEUAbaVz2zXn9ImI=",
+        "lastModified": 1775304910,
+        "narHash": "sha256-6SzWL7nsn4qmI97pnxGYpCuSyk/KZlvDR8HHBKTYfOM=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "fb993e86121b76faf5dde868a2b8e2390e4035ca",
+        "rev": "1e1621bb6765de685ceaae17962f1fb0dd71bcb6",
         "type": "github"
       },
       "original": {
@@ -465,12 +465,12 @@
         ]
       },
       "locked": {
-        "lastModified": 1774759885,
-        "narHash": "sha256-Y3D2GnZTO6BhGWeVcO6qUkiO5g0dDL2tmokLVWNC1WY=",
-        "rev": "16e3f4cd221a030186a96015d82dcb3fb4afa4d6",
-        "revCount": 291,
+        "lastModified": 1775277437,
+        "narHash": "sha256-zCi04nIBNwTMt8n35w9cBgNUqnyhbjivsGlx6/Qhqug=",
+        "rev": "de6d9094822a8f87fc380d1638f34d6cc6fa68ca",
+        "revCount": 293,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/youwen5/zen-browser/0.1.291%2Brev-16e3f4cd221a030186a96015d82dcb3fb4afa4d6/019d37ef-ff94-7bd8-ba8c-c5b789bd9b68/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/youwen5/zen-browser/0.1.293%2Brev-de6d9094822a8f87fc380d1638f34d6cc6fa68ca/019d56c9-0140-7cb2-b390-5c17d0c7cd9e/source.tar.gz"
       },
       "original": {
         "type": "tarball",
